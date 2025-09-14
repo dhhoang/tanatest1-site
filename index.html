@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanaphar Therapeutics - Thúc đột phá y dược</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-red': '#ff3333'
+          },
+          boxShadow: {
+            'soft': '0 4px 20px rgba(0,0,0,0.08)'
+          },
+          fontFamily: {
+            'barlow': ['Barlow', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Mobile nav: show the .nav-menu-mobile when the checkbox is checked */
+    .nav-toggle-checkbox {
+      position: absolute !important;
+      left: -9999px !important;
+    }
+
+    .nav-menu-mobile {
+      display: none;
+    }
+
+    .nav-toggle-checkbox:checked~.nav-menu-mobile {
+      display: block;
+    }
+
+    /* ensure mobile menu sits flush under navbar */
+    .nav-menu-mobile {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 60;
+    }
+  </style>
+  </link>
+</head>
+
+<body class="font-barlow">
+  <style>
+    /* fallback for non-Tailwind consumers: ensure site uses Barlow */
+    body {
+      font-family: 'Barlow', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+  </style>
+  <!-- Navigation -->
+  <nav class="bg-white sticky top-0 z-50 shadow-soft">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between py-3 nav-container">
+      <a class="flex items-center gap-3" href="index.html">
+        <img src="assets/logotana.png" alt="Tanaphar Therapeutics" class="h-10 w-auto"
+          onerror="this.style.display='none'">
+      </a>
+
+      <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox sr-only"
+        aria-label="Mở menu điều hướng" />
+      <label for="nav-toggle-checkbox" class="flex flex-col gap-1 w-9 h-7 items-center justify-center md:hidden">
+        <span class="block w-6 h-0.5 bg-gray-800"></span>
+        <span class="block w-6 h-0.5 bg-gray-800"></span>
+        <span class="block w-6 h-0.5 bg-gray-800"></span>
+      </label>
+
+      <!-- Mobile Menu (visible when checkbox is checked) -->
+      <div class="nav-menu-mobile hidden md:hidden absolute left-0 right-0 mt-0 bg-white">
+        <div class="px-6 py-4 flex flex-col gap-3">
+          <a href="#about" class="font-medium text-gray-800">Giới thiệu</a>
+          <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
+          <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
+          <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
+        </div>
+      </div>
+
+      <div class="hidden md:flex gap-8 items-center nav-menu">
+        <a href="#about" class="font-medium text-gray-800">Giới thiệu</a>
+        <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
+        <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
+        <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
+      </div>
+    </div>
+
+    <!-- legacy mobile menu placeholder removed (replaced by .nav-menu-mobile above) -->
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+    class="relative h-[80vh] min-h-[420px] overflow-hidden flex items-center bg-gradient-to-br from-primary-red/80 to-primary-red/60">
+    <img src="https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg" alt="Nghiên cứu y khoa"
+      class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="relative z-10 w-full">
+      <div class="max-w-6xl mx-auto px-6">
+        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-light leading-tight max-w-3xl">Hướng tới <em
+            class="not-italic text-amber-100 font-normal">thực hiện lời hứa</em> của các thuốc phân tử mới.
+        </h1>
+        <button class="mt-8 bg-white text-lg text-primary-red font-semibold px-6 py-3 rounded-[50vh] shadow-soft">Về
+          Chúng
+          Tôi</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section id="statistics" class="bg-gray-100">
+    <div class="max-w-6xl mx-auto px-6"> <!-- removed vertical padding to tighten section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="flex items-center gap-4 p-4"> <!-- removed per-item background/border -->
+          <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-red-50 text-red-600">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+              <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor"
+                stroke-width="2" />
+            </svg>
+          </div>
+          <!-- vertical divider on md+ -->
+          <div class="hidden md:block w-px h-8 bg-gray-200" aria-hidden="true"></div>
+          <div class="flex flex-col">
+            <div class="text-2xl font-bold text-primary-red">1 trên 10</div>
+            <div class="text-gray-600">Người mắc bệnh hiếm gặp</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 p-4">
+          <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-amber-50 text-amber-600">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+              <path d="M8 12L10.5 14.5L16 9" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="hidden md:block w-px h-8 bg-gray-200" aria-hidden="true"></div>
+          <div class="flex flex-col">
+            <div class="text-2xl font-bold text-primary-red">300M</div>
+            <div class="text-gray-600">Số người mắc bệnh hiếm trên toàn cầu</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 p-4">
+          <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+              <path
+                d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="hidden md:block w-px h-8 bg-gray-200" aria-hidden="true"></div>
+          <div class="flex flex-col">
+            <div class="text-2xl font-bold text-primary-red">95%</div>
+            <div class="text-gray-600">Ước tính không có phương pháp điều trị được FDA phê duyệt
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Science Section -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-semibold text-gray-900 mb-4">Thúc đẩy khoa học điều trị có mục tiêu, lấy
+            bệnh nhân làm trung tâm.</h2>
+          <p class="text-lg text-gray-700 mb-4">Tanaphar Therapeutics là một công ty công nghệ sinh học có trụ sở tại
+            Hoa Kỳ; đội ngũ nhà khoa học tận tâm của chúng tôi cam kết cải thiện cuộc sống cho những người
+            bị ảnh hưởng bởi các bệnh hiếm và nghiêm trọng. Chúng tôi phát triển danh mục thuốc kháng thể đa
+            dạng nhằm mục tiêu vào các bệnh còn thiếu phương pháp điều trị hiệu quả.</p>
+          <a href="#" class="text-primary-red font-semibold">Tìm hiểu thêm</a>
+        </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Nghiên cứu phòng thí nghiệm" class="w-full h-72 object-cover rounded-lg shadow-soft">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Section -->
+  <section>
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <img src="https://images.pexels.com/photos/159211/headache-pain-pills-medication-159211.jpeg"
+            alt="Cấu trúc phân tử" class="w-full h-72 object-cover rounded-lg shadow-soft">
+        </div>
+        <div>
+          <h2 class="text-3xl font-semibold text-gray-900 mb-4">Kiến thức sâu rộng và tâm huyết cải thiện cuộc
+            sống bệnh nhân.</h2>
+          <p class="text-lg text-gray-700 mb-4">Hàng triệu người đang chịu đựng các bệnh hiếm gặp, trong đó nhiều
+            người thiếu các liệu pháp cứu sống hiệu quả. Nhóm của chúng tôi tập trung giải quyết các nhu cầu
+            y tế chưa được đáp ứng bằng cách sử dụng hiểu biết khoa học sâu sắc về các mục tiêu tế bào quan
+            trọng.</p>
+          <p class="text-lg text-gray-700 mb-4">Chúng tôi tiên phong trong loại liệu pháp nhắm mục tiêu mới thông qua
+            phương pháp phân phối phân tử tiên tiến, tận dụng nghiên cứu hiện đại, công nghệ sản xuất tân
+            tiến và nền tảng khám phá miễn dịch-ung thư của mình.</p>
+          <a href="#" class="text-primary-red font-semibold">Danh mục sản phẩm</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-semibold text-gray-900 mb-4">Danh mục thuốc đa dạng giải quyết nhu cầu chưa
+            được đáp ứng.</h2>
+          <p class="text-lg text-gray-700 mb-4">Chúng tôi phát triển một danh mục thuốc kháng thể đa dạng nhằm giải
+            quyết các nhu cầu y tế quan trọng trong các bệnh miễn dịch hiếm gặp. Các lĩnh vực điều trị bao
+            gồm thấp khớp, bệnh tự miễn, các bệnh thoái hóa thần kinh và các bệnh truyền nhiễm.</p>
+          <p class="text-lg text-gray-700 mb-4">Đối với các chỉ định liên quan đến thần kinh, chúng tôi tận dụng công
+            nghệ vượt qua hàng rào máu-não sở hữu để phân phối liệu pháp chính xác đến mô thần kinh. Nền
+            tảng kỹ thuật protein tiên tiến của chúng tôi cho phép phát triển các kháng thể đơn dòng truyền
+            thống với nhiều thuộc tính, đảm bảo hiệu quả điều trị rộng rãi.</p>
+          <a href="#" class="text-primary-red font-semibold">Danh mục sản phẩm</a>
+        </div>
+        <div>
+          <img src="https://invest-hub.org/media/cache/corporate_page_header/uploads/actus/secteur_activite_sante.jpg"
+            alt="Phát triển thuốc" class="w-full h-72 object-cover rounded-lg shadow-soft">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sản phẩm tiêu biểu -->
+  <section id="products">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-semibold text-gray-900">Sản phẩm tiêu biểu</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <a href="product-detail.html" class="group block focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+          <article class="bg-white rounded-lg overflow-hidden shadow-soft">
+            <img
+              src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+              alt="TheraPatch Pro" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">TheraPatch Pro</h3>
+              <p class="text-gray-600 mt-2 text-base">Hệ thống miếng dán truyền thuốc qua da với cơ chế phóng
+                thích kiểm soát, giúp tối ưu hóa việc tuân thủ điều trị cho bệnh nhân mãn tính.</p>
+              <p class="text-primary-red font-semibold text-sm mt-3">Tính năng: Phóng thích 24 giờ • Chống
+                nước • Không gây dị ứng</p>
+            </div>
+          </article>
+        </a>
+
+        <a href="product-detail.html" class="group block focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+          <article class="bg-white rounded-lg overflow-hidden shadow-soft">
+            <img
+              src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+              alt="NeoCaps" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">NeoCaps Advanced</h3>
+              <p class="text-gray-600 mt-2 text-base">Viên nang phóng thích có mục tiêu, tối ưu hóa dược động
+                học và giảm tác dụng phụ toàn thân.</p>
+              <p class="text-primary-red font-semibold text-sm mt-3">Tính năng: Phân phối có mục tiêu • Tương
+                thích sinh học • Liều lượng chính xác</p>
+            </div>
+          </article>
+        </a>
+
+        <a href="product-detail.html" class="group block focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+          <article class="bg-white rounded-lg overflow-hidden shadow-soft">
+            <img
+              src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+              alt="PulseCare" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">PulseCare Monitor</h3>
+              <p class="text-gray-600 mt-2 text-base">Thiết bị giám sát thông minh theo dõi bệnh nhân, cung cấp
+                dữ liệu thời gian thực và phân tích hỗ trợ bởi AI để quản lý điều trị.</p>
+              <p class="text-primary-red font-semibold text-sm mt-3">Tính năng: Dữ liệu thời gian thực • Đồng
+                bộ đám mây • Phân tích AI</p>
+            </div>
+          </article>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-semibold text-gray-900">Tin tức</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <a href="article.html" class="block group focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+        <article
+          class="p-6 bg-gray-100 border border-gray-200 rounded-lg hover:shadow-lg hover:-translate-y-1 transform transition">
+          <div class="text-sm text-gray-500">15 Tháng 6, 2024</div>
+          <h3 class="font-semibold mt-2">Tanaphar công bố dữ liệu lâm sàng đầu tiên trên người của MWP-001
+            (DNWT2) tại EHA 2024</h3>
+        </article>
+        </a>
+
+        <a href="article.html" class="block group focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+        <article
+          class="p-6 bg-gray-100 border border-gray-200 rounded-lg hover:shadow-lg hover:-translate-y-1 transform transition">
+          <div class="text-sm text-gray-500">3 Tháng 2, 2024</div>
+          <h3 class="font-semibold mt-2">FDA trao chỉ định thuốc mồ côi cho MWP-003 (DISC Platform) điều trị
+            Polycythemia Vera</h3>
+        </article>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Careers Section -->
+  <section id="careers">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Đội ngũ hợp tác" class="w-full h-72 object-cover rounded-lg shadow-soft">
+        </div>
+        <div>
+          <h2 class="text-3xl font-semibold text-gray-900 mb-4">Chúng tôi luôn tìm kiếm nhân tài. Tham gia
+            cùng chúng tôi!</h2>
+          <p class="text-gray-700 mb-4">Là một công ty công nghệ sinh học, chúng tôi luôn tìm kiếm những nhân
+            tài xuất sắc để thúc đẩy thành công. Cùng nhau, chúng ta có thể phát triển các liệu pháp giúp
+            bệnh nhân sống lâu hơn và chất lượng cuộc sống tốt hơn. Chúng tôi đề cao đổi mới, hợp tác và
+            xuất sắc trong mọi vị trí.</p>
+          <a href="#" class="text-primary-red font-semibold">Xem vị trí tuyển dụng</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="bg-primary-red text-white">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex flex-col items-center justify-center text-center gap-6">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-light leading-tight max-w-4xl">Chúng tôi không chỉ
+          phát triển liệu pháp — chúng tôi đang tiên phong các đột phá trong liệu pháp sinh học cho bệnh
+          hiếm gặp.</h2>
+        <button class="mt-2 bg-white text-primary-red font-semibold px-8 py-3 rounded-[50vh] text-lg">Hợp tác cùng
+          chúng tôi</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-50 text-gray-900">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="text-lg font-semibold text-primary-red">Tanaphar</div>
+          <p class="text-sm text-gray-700 mt-2">Chúng tôi cam kết mang đến liệu pháp chất lượng cao cho bệnh
+            nhân mắc bệnh hiếm.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Chúng tôi sẵn sàng hỗ trợ</h4>
+          <p class="text-sm text-gray-700">Liên hệ với chúng tôi hôm nay</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Kết nối với chúng tôi</h4>
+          <p class="text-sm text-gray-700">Giữ liên lạc</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Tanaphar Ltd.</h4>
+          <p class="text-sm text-gray-700">
+            123 Research Drive, Suite 100<br>Biotech City, CA 94000<br>Hoa Kỳ
+          </p>
+          <p class="text-sm text-gray-700 mt-2">(555) 123-4567</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-6 text-center text-sm text-gray-600">&copy; 2025 Tanaphar
+        Ltd. Copyright.</div>
+    </div>
+  </footer>
+</body>
+
+</html>

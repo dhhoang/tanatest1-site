@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tanaphar — Danh mục sản phẩm</title>
+
+  <!-- Barlow font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'primary-red': '#ff3333' },
+          boxShadow: { 'soft': '0 4px 20px rgba(0,0,0,0.08)' },
+          fontFamily: { 'barlow': ['Barlow', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'] }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Barlow', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="font-barlow bg-white text-gray-900">
+
+  <!-- Header (same layout as site) -->
+  <nav class="bg-white sticky top-0 z-50 shadow-soft">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between py-3">
+      <a class="flex items-center gap-3" href="index.html">
+        <img src="assets/logotana.png" alt="Tanaphar" class="h-10 w-auto" onerror="this.style.display='none'">
+      </a>
+
+      <div class="hidden md:flex gap-8 items-center">
+        <a href="index.html" class="font-medium text-gray-800">Trang chủ</a>
+        <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
+        <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
+        <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
+      </div>
+
+      <!-- mobile menu toggle (CSS only pattern) -->
+      <input id="nav-toggle-checkbox" class="sr-only" type="checkbox" />
+      <label for="nav-toggle-checkbox" class="md:hidden flex flex-col gap-1 w-9 h-7 items-center justify-center">
+        <span class="block w-6 h-0.5 bg-gray-800"></span>
+        <span class="block w-6 h-0.5 bg-gray-800"></span>
+        <span class="block w-6 h-0.5 bg-gray-800"></span>
+      </label>
+
+      <div class="nav-menu-mobile hidden md:hidden absolute left-0 right-0 mt-0 bg-white">
+        <div class="px-6 py-4 flex flex-col gap-3">
+          <a href="index.html" class="font-medium text-gray-800">Trang chủ</a>
+          <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
+          <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
+          <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <h1 class="text-3xl md:text-4xl font-light text-gray-900">Danh mục sản phẩm</h1>
+      <p class="mt-2 text-gray-600 max-w-2xl">Danh sách các thuốc và thiết bị y tế tiêu biểu của Tanaphar. Dùng bộ lọc
+        để thu hẹp kết quả.</p>
+    </div>
+  </header>
+
+  <!-- Toolbar / Filters -->
+  <section class="bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 py-6">
+      <div class="flex flex-col md:flex-row md:items-center md:gap-6 gap-4">
+        <div class="flex-1 flex gap-3">
+          <label class="sr-only" for="search">Tìm kiếm</label>
+          <input id="search" type="text" placeholder="Tìm kiếm theo tên sản phẩm"
+            class="w-full px-4 py-2 rounded-md border border-gray-200 focus:outline-none" />
+
+          <select class="px-4 py-2 rounded-md border border-gray-200 bg-white">
+            <option>Danh mục: Tất cả</option>
+            <option>Thuốc</option>
+            <option>Thiết bị</option>
+            <option>Tiêu biểu</option>
+          </select>
+        </div>
+
+        <div class="flex gap-3 items-center">
+          <select class="px-4 py-2 rounded-md border border-gray-200 bg-white">
+            <option>Sắp xếp: Mới nhất</option>
+            <option>Sắp xếp: A → Z</option>
+            <option>Sắp xếp: Nổi bật</option>
+          </select>
+
+          <div class="hidden sm:flex items-center gap-2 text-sm text-gray-600">
+            <span>Hiển thị</span>
+            <button class="px-3 py-2 bg-white border border-gray-200 rounded-[50vh]">12</button>
+            <button class="px-3 py-2 bg-white border border-gray-200 rounded-[50vh]">24</button>
+          </div>
+
+          <button class="ml-2 px-4 py-2 bg-primary-red text-white rounded-[50vh]">Áp dụng</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product grid -->
+  <main id="products" class="max-w-6xl mx-auto px-6 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Product card 1 -->
+      <a href="product-detail.html"
+        class="group block focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+        <article class="bg-white border border-gray-200 rounded-lg shadow-soft overflow-hidden">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&w=900&q=80"
+              alt="TheraPatch Pro" class="w-full h-48 object-cover">
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900">TheraPatch Pro</h3>
+            <p class="mt-2 text-sm text-gray-600">Miếng dán truyền thuốc qua da với phóng thích kiểm soát 24 giờ.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">Thuốc</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">Phóng thích 24h</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Product card 2 -->
+      <a href="product-detail.html"
+        class="group block focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+        <article class="bg-white border border-gray-200 rounded-lg shadow-soft overflow-hidden">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1581091012184-7c0a8d71f4b6?auto=format&fit=crop&w=900&q=80"
+              alt="NeoCaps" class="w-full h-48 object-cover">
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900">NeoCaps Advanced</h3>
+            <p class="mt-2 text-sm text-gray-600">Viên nang phóng thích có mục tiêu, tối ưu hóa dược động học.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">Thuốc</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">Viên nang</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Product card 3 -->
+      <a href="product-detail.html"
+        class="group block focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+        <article class="bg-white border border-gray-200 rounded-lg shadow-soft overflow-hidden">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1581091718330-3bb5fb6b0b2f?auto=format&fit=crop&w=900&q=80"
+              alt="PulseCare" class="w-full h-48 object-cover">
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900">PulseCare Monitor</h3>
+            <p class="mt-2 text-sm text-gray-600">Thiết bị giám sát theo dõi bệnh nhân, dữ liệu thời gian thực.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">Thiết bị</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">Dữ liệu thời gian thực</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Placeholder cards (repeat as needed) -->
+      <a href="product-detail.html"
+        class="group block focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
+        <article class="bg-white border border-gray-200 rounded-lg shadow-soft overflow-hidden">
+          <div class="relative">
+            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400">Ảnh sản phẩm</div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900">Sản phẩm XYZ</h3>
+            <p class="mt-2 text-sm text-gray-600">Mô tả ngắn về sản phẩm XYZ.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">Thiết bị</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+    </div>
+
+    <!-- Pagination (template only) -->
+    <div class="mt-8 flex items-center justify-between">
+      <div class="text-sm text-gray-600">Hiển thị 1–6 của 24</div>
+      <div class="flex items-center gap-2">
+        <button class="px-3 py-2 border border-gray-200 rounded-[50vh]">Trước</button>
+        <button class="px-3 py-2 border border-gray-200 rounded-[50vh]">1</button>
+        <button class="px-3 py-2 border border-gray-200 rounded-[50vh]">2</button>
+        <button class="px-3 py-2 border border-gray-200 rounded-[50vh]">3</button>
+        <button class="px-3 py-2 border border-gray-200 rounded-[50vh]">Tiếp</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (same layout as site) -->
+  <footer class="bg-gray-50 text-gray-900 mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="text-lg font-semibold text-primary-red">Tanaphar</div>
+          <p class="text-sm text-gray-700 mt-2">Chúng tôi cam kết mang đến liệu pháp chất lượng cao cho bệnh nhân mắc
+            bệnh hiếm.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Chúng tôi sẵn sàng hỗ trợ</h4>
+          <p class="text-sm text-gray-700">Liên hệ với chúng tôi hôm nay</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Kết nối với chúng tôi</h4>
+          <p class="text-sm text-gray-700">Giữ liên lạc</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Tanaphar Ltd.</h4>
+          <p class="text-sm text-gray-700">
+            123 Research Drive, Suite 100<br>Biotech City, CA 94000<br>Hoa Kỳ
+          </p>
+          <p class="text-sm text-gray-700 mt-2">(555) 123-4567</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-6 text-center text-sm text-gray-600">&copy; 2025 Tanaphar Ltd. Copyright.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
