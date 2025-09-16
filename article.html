@@ -95,7 +95,8 @@
 
     <!-- Article content -->
     <main class="max-w-6xl mx-auto px-6 py-12">
-        <article class="prose prose-lg max-w-none">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="prose prose-lg max-w-none md:col-span-2">
             <header class="mb-6">
                 <div class="text-xs text-gray-500">14 Sep 2025 • Nghiên cứu</div>
                 <h1 class="text-3xl md:text-4xl font-light text-gray-900 mt-2">Tiến triển mới trong liệu pháp truyền
@@ -105,7 +106,7 @@
             </header>
 
             <figure>
-                <img src="https://images.pexels.com/photos/3825443/pexels-photo-3825443.jpeg" alt="therapy patch"
+                <img src="https://ichnhi.vn/wp-content/uploads/2025/08/Ichnhi1137-scaled.jpg" alt="therapy patch"
                     class="w-full rounded-lg object-cover">
                 <figcaption class="text-sm text-gray-500 mt-2">Hình ảnh minh họa: liệu pháp truyền thuốc qua da.
                 </figcaption>
@@ -143,7 +144,49 @@
                     </div>
                 </div>
             </footer>
-        </article>
+            </article>
+
+            <!-- Aside: Related articles (enhanced) -->
+            <aside id="related-articles" class="md:col-span-1">
+                <div class="bg-white p-4 rounded-lg shadow-soft sticky top-24">
+                    <h3 class="text-lg font-semibold mb-3 text-primary-red">Bài viết liên quan</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="article.html" class="flex items-start gap-3 p-3 rounded border-l-4 border-primary-red/40 bg-primary-red/10">
+                                <span class="mt-1 inline-block w-2 h-2 rounded-full bg-primary-red flex-shrink-0"></span>
+                                <div class="flex-1">
+                                    <div class="text-xs text-primary-red/80">15 Tháng 6, 2024</div>
+                                    <div class="font-medium text-gray-900">Tanaphar công bố dữ liệu lâm sàng MWP-001</div>
+                                </div>
+                                <span class="ml-2 inline-flex items-center text-xs font-semibold bg-primary-red/10 text-primary-red rounded-full px-2 py-0.5">Tin</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="article.html" class="flex items-start gap-3 hover:bg-primary-red/5 p-3 rounded transition">
+                                <span class="mt-1 inline-block w-2 h-2 rounded-full bg-primary-red flex-shrink-0"></span>
+                                <div class="flex-1">
+                                    <div class="text-xs text-primary-red/80">3 Tháng 2, 2024</div>
+                                    <div class="font-medium text-gray-900">FDA trao chỉ định thuốc mồ côi cho MWP-003</div>
+                                </div>
+                                <span class="ml-2 inline-flex items-center text-xs font-semibold bg-primary-red text-white rounded-full px-2 py-0.5">Mới</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="news.html" class="flex items-start gap-3 hover:bg-primary-red/5 p-3 rounded transition">
+                                <span class="mt-1 inline-block w-2 h-2 rounded-full bg-primary-red flex-shrink-0"></span>
+                                <div class="flex-1">
+                                    <div class="text-xs text-primary-red/80">10 Tháng 11, 2023</div>
+                                    <div class="font-medium text-gray-900">Cập nhật kết quả thử nghiệm tiền lâm sàng</div>
+                                </div>
+                                <span class="ml-2 inline-flex items-center text-xs font-semibold bg-primary-red/10 text-primary-red rounded-full px-2 py-0.5">Báo cáo</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
     </main>
 
     <!-- Footer -->
