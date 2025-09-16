@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="https://tanaphar.com/wp-content/uploads/2021/04/cropped-favicon-192x192.jpg" sizes="192x192">
   <title>Tanaphar — Thông tin sản phẩm</title>
 
   <!-- Barlow font -->
@@ -18,7 +19,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { 'primary-red': '#ff3333' },
+          colors: { 'primary-red': '#ed2323' },
           boxShadow: { 'soft': '0 4px 20px rgba(0,0,0,0.08)' },
           fontFamily: { 'barlow': ['Barlow', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'] }
         }
@@ -125,7 +126,7 @@
       </a>
 
       <div class="hidden md:flex gap-8 items-center">
-        <a href="index.html" class="font-medium text-gray-800">Trang chủ</a>
+        <a href="introduction.html" class="font-medium text-gray-800">Giới thiệu</a>
         <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
         <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
         <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
@@ -141,7 +142,7 @@
 
       <div class="nav-menu-mobile hidden md:hidden absolute left-0 right-0 mt-0 bg-white">
         <div class="px-6 py-4 flex flex-col gap-3">
-          <a href="index.html" class="font-medium text-gray-800">Trang chủ</a>
+          <a href="introduction.html" class="font-medium text-gray-800">Giới thiệu</a>
           <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
           <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
           <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
@@ -192,13 +193,13 @@
 
         <!-- Product header + CTA -->
         <div class="mt-6 bg-white border border-gray-200 rounded-lg p-6 shadow-soft">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div class="flex flex-col gap-4">
             <div>
               <h1 class="text-2xl font-semibold text-gray-900">TheraPatch Pro — Miếng dán truyền thuốc</h1>
               <div class="mt-2 text-sm text-gray-600">Mã sản phẩm: TP-2025</div>
             </div>
 
-            <div class="flex gap-3 items-center">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-3">
               <button class="px-4 py-2 bg-white border border-gray-200 rounded-[50vh]">Thêm vào danh sách</button>
               <button class="px-4 py-2 bg-primary-red text-white rounded-[50vh]">Liên hệ mua</button>
             </div>

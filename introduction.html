@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="icon" href="https://tanaphar.com/wp-content/uploads/2021/04/cropped-favicon-192x192.jpg" sizes="192x192">
+    <title>Tanaphar — Giới thiệu</title>
+
+    <!-- Barlow font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'primary-red': '#ed2323' },
+                    boxShadow: { 'soft': '0 4px 20px rgba(0,0,0,0.08)' },
+                    fontFamily: { 'barlow': ['Barlow', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Barlow', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* Mobile nav helpers (same pattern) */
+        .nav-toggle-checkbox {
+            position: absolute !important;
+            left: -9999px !important;
+        }
+
+        .nav-menu-mobile {
+            display: none;
+        }
+
+        .nav-toggle-checkbox:checked~.nav-menu-mobile {
+            display: block;
+        }
+
+        .nav-menu-mobile {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 60;
+        }
+    </style>
+</head>
+
+<body class="font-barlow bg-white text-gray-900">
+
+    <!-- Header -->
+    <nav class="bg-white sticky top-0 z-50 shadow-soft">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between py-3">
+            <a class="flex items-center gap-3" href="index.html">
+                <img src="assets/logotana.png" alt="Tanaphar" class="h-10 w-auto" onerror="this.style.display='none'">
+            </a>
+
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="font-medium text-gray-800">Trang chủ</a>
+                <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
+                <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
+                <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
+            </div>
+
+            <!-- mobile menu toggle -->
+            <input id="nav-toggle-checkbox-intro" class="nav-toggle-checkbox sr-only" type="checkbox" />
+            <label for="nav-toggle-checkbox-intro"
+                class="md:hidden flex flex-col gap-1 w-9 h-7 items-center justify-center">
+                <span class="block w-6 h-0.5 bg-gray-800"></span>
+                <span class="block w-6 h-0.5 bg-gray-800"></span>
+                <span class="block w-6 h-0.5 bg-gray-800"></span>
+            </label>
+
+            <div class="nav-menu-mobile hidden md:hidden absolute left-0 right-0 mt-0 bg-white">
+                <div class="px-6 py-4 flex flex-col gap-3">
+                    <a href="index.html" class="font-medium text-gray-800">Trang chủ</a>
+                    <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
+                    <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
+                    <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header
+        class="relative h-[56vh] min-h-[340px] bg-gradient-to-br from-primary-red/85 to-primary-red/60 text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 h-full flex items-center">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Về Tanaphar — Đổi mới vì sức khỏe bệnh nhân
+                </h1>
+                <p class="mt-4 text-lg text-white/90">Chúng tôi nghiên cứu, phát triển và cung cấp liệu pháp định hướng
+                    cho
+                    bệnh nhân cần chăm sóc chuyên sâu. Tập trung vào chất lượng, an toàn và đổi mới.</p>
+                <div class="mt-6 flex gap-3">
+                    <a href="contacts.html"
+                        class="bg-white text-primary-red font-semibold px-5 py-3 rounded-[50vh]">Liên hệ</a>
+                    <a href="#mission" class="px-5 py-3 border border-white/30 rounded-[50vh]">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+        <svg class="absolute right-0 bottom-0 opacity-20" width="420" height="420" viewBox="0 0 420 420" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="210" cy="210" r="210" fill="white" />
+        </svg>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+
+        <!-- Mission + Approach -->
+        <section id="mission" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h2 class="text-2xl font-semibold">Sứ mệnh của chúng tôi</h2>
+                <p class="mt-3 text-gray-700">Tanaphar cam kết phát triển liệu pháp an toàn và hiệu quả cho các bệnh
+                    nhân
+                    có nhu cầu chuyên biệt. Chúng tôi hợp tác với cộng đồng khoa học và lâm sàng để biến nghiên cứu
+                    thành giải pháp.</p>
+
+                <ul class="mt-4 space-y-2 text-gray-700">
+                    <li class="flex items-start gap-3"><span class="text-primary-red font-bold">✓</span> Lấy bệnh nhân
+                        là trung tâm</li>
+                    <li class="flex items-start gap-3"><span class="text-primary-red font-bold">✓</span> Tuân thủ tiêu
+                        chuẩn quốc tế (GMP)</li>
+                    <li class="flex items-start gap-3"><span class="text-primary-red font-bold">✓</span> Minh bạch kết
+                        quả nghiên cứu</li>
+                </ul>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-soft">
+                <h3 class="font-semibold">Cách tiếp cận nghiên cứu</h3>
+                <p class="mt-2 text-gray-700">Chúng tôi kết hợp phát triển dược học, thiết kế hệ phân phối và thử nghiệm
+                    lâm sàng từ giai đoạn tiền lâm sàng đến hậu thị trường.</p>
+                <dl class="mt-4 grid grid-cols-2 gap-3 text-sm text-gray-700">
+                    <div>
+                        <dt class="font-semibold">Nghiên cứu</dt>
+                        <dd class="mt-1">Hợp tác học viện</dd>
+                    </div>
+                    <div>
+                        <dt class="font-semibold">Sản xuất</dt>
+                        <dd class="mt-1">Tiêu chuẩn GMP</dd>
+                    </div>
+                    <div>
+                        <dt class="font-semibold">An toàn</dt>
+                        <dd class="mt-1">Giám sát hậu thị trường</dd>
+                    </div>
+                    <div>
+                        <dt class="font-semibold">Hỗ trợ</dt>
+                        <dd class="mt-1">Theo dõi bệnh nhân</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- Timeline / history -->
+        <section class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-semibold">Cột mốc phát triển</h3>
+            <ol class="mt-4 space-y-4">
+                <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 flex items-center justify-center bg-primary-red text-white rounded-full">2008
+                    </div>
+                    <div>
+                        <div class="font-semibold">Thành lập</div>
+                        <div class="text-sm text-gray-700">Tanaphar được thành lập với mục tiêu phát triển liệu pháp đặc
+                            trị.</div>
+                    </div>
+                </li>
+                <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 flex items-center justify-center bg-primary-red text-white rounded-full">2015
+                    </div>
+                    <div>
+                        <div class="font-semibold">Mở rộng sản xuất</div>
+                        <div class="text-sm text-gray-700">Bắt đầu xây dựng cơ sở sản xuất đạt chuẩn GMP.</div>
+                    </div>
+                </li>
+                <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 flex items-center justify-center bg-primary-red text-white rounded-full">2023
+                    </div>
+                    <div>
+                        <div class="font-semibold">Cải tiến lâm sàng</div>
+                        <div class="text-sm text-gray-700">Hoàn thành thử nghiệm giai đoạn II cho liệu pháp truyền thuốc
+                            qua da.</div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Stats -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+                <div class="text-3xl font-bold text-primary-red">1 trên 10</div>
+                <div class="mt-2 text-sm text-gray-700">Bệnh nhân trong nhóm mục tiêu</div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+                <div class="text-3xl font-bold text-primary-red">300M</div>
+                <div class="mt-2 text-sm text-gray-700">Dữ liệu thu thập (nhật/tháng)</div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+                <div class="text-3xl font-bold text-primary-red">95%</div>
+                <div class="mt-2 text-sm text-gray-700">Độ hài lòng bệnh nhân</div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section id="intro-team" class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="text-xl font-semibold">Đội ngũ</h3>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-6 items-center">
+                    <div class="text-center">
+                        <div class="w-44 h-44 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden bg-gray-100 ring-6 ring-primary-red/30 shadow-soft transform transition hover:scale-105">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="team1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4 font-semibold text-lg">Dr. Lê Minh</div>
+                        <div class="text-sm text-gray-600">Giám đốc nghiên cứu</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-44 h-44 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden bg-gray-100 ring-6 ring-primary-red/30 shadow-soft transform transition hover:scale-105">
+                            <img src="https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg" alt="team2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4 font-semibold text-lg">Ms. Hương</div>
+                        <div class="text-sm text-gray-600">Quản lý sản xuất</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-44 h-44 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden bg-gray-100 ring-6 ring-primary-red/30 shadow-soft transform transition hover:scale-105">
+                            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" alt="team3" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4 font-semibold text-lg">Mr. An</div>
+                        <div class="text-sm text-gray-600">Trưởng bộ phận chất lượng</div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Values -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-soft">
+                <h4 class="font-semibold">Giá trị cốt lõi</h4>
+                <p class="mt-2 text-sm text-gray-700">Cam kết với bệnh nhân, khoa học và cộng đồng.</p>
+                <ul class="mt-4 space-y-3">
+                    <li class="flex gap-3 items-start"><span class="text-primary-red font-bold">●</span> An toàn và chất lượng</li>
+                    <li class="flex gap-3 items-start"><span class="text-primary-red font-bold">●</span> Đổi mới liên tục</li>
+                    <li class="flex gap-3 items-start"><span class="text-primary-red font-bold">●</span> Hợp tác minh bạch</li>
+                </ul>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-soft">
+                <h4 class="font-semibold">Quy trình nghiên cứu</h4>
+                <div class="mt-3 text-sm text-gray-700">Từ ý tưởng tới bệnh nhân — chúng tôi kiểm soát mọi bước.</div>
+                <ol class="mt-4 space-y-3 text-sm">
+                    <li class="flex items-start gap-3"><span class="font-semibold text-primary-red">1.</span> Thiết kế & tiền lâm sàng</li>
+                    <li class="flex items-start gap-3"><span class="font-semibold text-primary-red">2.</span> Thử nghiệm lâm sàng</li>
+                    <li class="flex items-start gap-3"><span class="font-semibold text-primary-red">3.</span> Sản xuất & phân phối</li>
+                </ol>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-soft flex flex-col justify-between">
+                <div>
+                    <h4 class="font-semibold">Số liệu nhanh</h4>
+                    <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+                        <div><div class="text-2xl font-bold text-primary-red">24h</div><div class="text-sm text-gray-700">Phóng thích</div></div>
+                        <div><div class="text-2xl font-bold text-primary-red">120+</div><div class="text-sm text-gray-700">Nhân sự</div></div>
+                        <div><div class="text-2xl font-bold text-primary-red">50+</div><div class="text-sm text-gray-700">Hợp tác học thuật</div></div>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm text-gray-600">Sẵn sàng chia sẻ dữ liệu với đối tác chiến lược.</div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="mt-6">
+            <h3 class="text-xl font-semibold">Ý kiến từ đối tác & bệnh nhân</h3>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <blockquote class="bg-white border border-gray-200 rounded-lg p-4 italic text-sm text-gray-700">"Tanaphar đã giúp chúng tôi cải thiện quy trình chăm sóc. Họ rất chuyên nghiệp và minh bạch." <div class="mt-3 text-xs text-gray-500">— Phòng khám An Khang</div></blockquote>
+                <blockquote class="bg-white border border-gray-200 rounded-lg p-4 italic text-sm text-gray-700">"Sản phẩm giúp bệnh nhân ổn định hơn trong điều trị hàng ngày." <div class="mt-3 text-xs text-gray-500">— Bệnh nhân thử nghiệm</div></blockquote>
+                <blockquote class="bg-white border border-gray-200 rounded-lg p-4 italic text-sm text-gray-700">"Hợp tác nghiên cứu với Tanaphar rất hiệu quả và có chiều sâu." <div class="mt-3 text-xs text-gray-500">— Trường Đại học Y Dược</div></blockquote>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="mt-6 bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="text-xl font-semibold">Đối tác</h3>
+            <div class="mt-4 flex items-center gap-6 flex-wrap justify-center">
+                <div class="h-12 w-32 flex items-center justify-center bg-gray-50 border rounded">Logo A</div>
+                <div class="h-12 w-32 flex items-center justify-center bg-gray-50 border rounded">Logo B</div>
+                <div class="h-12 w-32 flex items-center justify-center bg-gray-50 border rounded">Logo C</div>
+                <div class="h-12 w-32 flex items-center justify-center bg-gray-50 border rounded">Logo D</div>
+            </div>
+        </section>
+
+        <!-- FAQ (simple accordion) -->
+        <section class="mt-6 bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="text-xl font-semibold">Câu hỏi thường gặp</h3>
+            <div class="mt-4 space-y-3">
+                <details class="p-3 border rounded">
+                    <summary class="cursor-pointer font-medium">Tanaphar làm gì khác biệt?</summary>
+                    <p class="mt-2 text-sm text-gray-700">Chúng tôi tập trung vào liệu pháp định hướng và sản xuất theo tiêu chuẩn cao.</p>
+                </details>
+                <details class="p-3 border rounded">
+                    <summary class="cursor-pointer font-medium">Làm thế nào để hợp tác nghiên cứu?</summary>
+                    <p class="mt-2 text-sm text-gray-700">Liên hệ với đội ngũ nghiên cứu tại phần Liên hệ để thảo luận chi tiết.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-primary-red text-white rounded-lg p-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl font-semibold">Hợp tác để tạo ảnh hưởng</h3>
+                <p class="mt-3">Chúng tôi tìm kiếm đối tác nghiên cứu và nhà đầu tư để đưa liệu pháp đến những bệnh nhân
+                    cần nhất.</p>
+                <div class="mt-6 flex justify-center gap-3">
+                    <a href="contacts.html"
+                        class="bg-white text-primary-red font-semibold px-6 py-3 rounded-[50vh]">Liên hệ</a>
+                    <a href="products.html" class="border border-white/30 px-6 py-3 rounded-[50vh]">Xem sản phẩm</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 text-gray-900 mt-12">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-lg font-semibold text-primary-red">Tanaphar</div>
+                    <p class="text-sm text-gray-700 mt-2">Chúng tôi cam kết mang đến liệu pháp chất lượng cao cho bệnh
+                        nhân mắc bệnh hiếm.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Chúng tôi sẵn sàng hỗ trợ</h4>
+                    <p class="text-sm text-gray-700">Liên hệ với chúng tôi hôm nay</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Kết nối với chúng tôi</h4>
+                    <p class="text-sm text-gray-700">Giữ liên lạc</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Tanaphar Ltd.</h4>
+                    <p class="text-sm text-gray-700">123 Research Drive, Suite 100<br>Biotech City, CA 94000<br>Hoa Kỳ
+                    </p>
+                    <p class="text-sm text-gray-700 mt-2">(555) 123-4567</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-6 text-center text-sm text-gray-600">&copy; 2025 Tanaphar Ltd.
+                Copyright.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

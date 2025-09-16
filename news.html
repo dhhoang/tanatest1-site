@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="https://tanaphar.com/wp-content/uploads/2021/04/cropped-favicon-192x192.jpg" sizes="192x192">
   <title>Tanaphar — Tin tức</title>
 
   <!-- Barlow font -->
@@ -18,7 +19,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { 'primary-red': '#ff3333' },
+          colors: { 'primary-red': '#ed2323' },
           boxShadow: { 'soft': '0 4px 20px rgba(0,0,0,0.08)' },
           fontFamily: { 'barlow': ['Barlow', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'] }
         }
@@ -66,7 +67,7 @@
       </a>
 
       <div class="hidden md:flex gap-8 items-center">
-        <a href="index.html" class="font-medium text-gray-800">Trang chủ</a>
+        <a href="introduction.html" class="font-medium text-gray-800">Giới thiệu</a>
         <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
         <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
         <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
@@ -82,7 +83,7 @@
 
       <div class="nav-menu-mobile hidden md:hidden absolute left-0 right-0 mt-0 bg-white">
         <div class="px-6 py-4 flex flex-col gap-3">
-          <a href="index.html" class="font-medium text-gray-800">Trang chủ</a>
+          <a href="introduction.html" class="font-medium text-gray-800">Giới thiệu</a>
           <a href="products.html" class="font-medium text-gray-800">Sản phẩm</a>
           <a href="news.html" class="font-medium text-gray-800">Tin tức</a>
           <a href="contacts.html" class="font-medium text-gray-800">Liên hệ</a>
@@ -110,15 +111,20 @@
           <!-- Article 1 -->
           <a href="article.html" class="block group focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
           <article
-            class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
-            <div class="flex items-start gap-4">
-              <img src="https://images.pexels.com/photos/3825443/pexels-photo-3825443.jpeg" alt="news 1"
-                class="w-28 h-20 object-cover rounded-md">
-              <div>
+            class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1">
+            <!-- On small screens stack image above content, on md+ show image left and content right -->
+            <div class="flex flex-col md:flex-row">
+              <div class="md:flex-shrink-0 md:w-56 lg:w-64">
+                <div class="aspect-square w-full">
+                  <img src="https://images.pexels.com/photos/3825443/pexels-photo-3825443.jpeg" alt="news 1"
+                    class="w-full h-full object-cover block">
+                </div>
+              </div>
+              <div class="p-6">
                 <div class="text-xs text-gray-500">14 Sep 2025 • Nghiên cứu</div>
-                <h3 class="mt-2 text-lg font-semibold text-gray-900">Tiến triển mới trong liệu pháp
+                <h3 class="mt-2 text-lg md:text-xl font-semibold text-gray-900">Tiến triển mới trong liệu pháp
                   truyền thuốc qua da</h3>
-                <p class="mt-2 text-sm text-gray-600">Một nhóm nghiên cứu công bố kết quả thử nghiệm
+                <p class="mt-3 text-sm text-gray-600">Một nhóm nghiên cứu công bố kết quả thử nghiệm
                   giai đoạn II cho thấy miếng dán phóng thích kéo dài có hiệu quả trong...</p>
               </div>
             </div>
@@ -128,15 +134,19 @@
           <!-- Article 2 -->
           <a href="article.html" class="block group focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
           <article
-            class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
-            <div class="flex items-start gap-4">
-              <img src="https://images.pexels.com/photos/3825443/pexels-photo-3825443.jpeg" alt="news 2"
-                class="w-28 h-20 object-cover rounded-md">
-              <div>
+            class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:flex-shrink-0 md:w-56 lg:w-64">
+                <div class="aspect-square w-full">
+                  <img src="https://images.pexels.com/photos/3825443/pexels-photo-3825443.jpeg" alt="news 2"
+                    class="w-full h-full object-cover block">
+                </div>
+              </div>
+              <div class="p-6">
                 <div class="text-xs text-gray-500">10 Sep 2025 • Tin công ty</div>
-                <h3 class="mt-2 text-lg font-semibold text-gray-900">Tanaphar mở rộng trung tâm sản xuất
+                <h3 class="mt-2 text-lg md:text-xl font-semibold text-gray-900">Tanaphar mở rộng trung tâm sản xuất
                   đạt chuẩn GMP</h3>
-                <p class="mt-2 text-sm text-gray-600">Chúng tôi vui mừng thông báo hoàn thành giai đoạn
+                <p class="mt-3 text-sm text-gray-600">Chúng tôi vui mừng thông báo hoàn thành giai đoạn
                   mở rộng nhà máy nhằm tăng công suất sản xuất thuốc đặc trị...</p>
               </div>
             </div>
@@ -146,15 +156,19 @@
           <!-- Article 3 -->
           <a href="article.html" class="block group focus:outline-none focus:ring-2 focus:ring-primary-red rounded-lg">
           <article
-            class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
-            <div class="flex items-start gap-4">
-              <img src="https://images.pexels.com/photos/3825443/pexels-photo-3825443.jpeg" alt="news 3"
-                class="w-28 h-20 object-cover rounded-md">
-              <div>
+            class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:flex-shrink-0 md:w-56 lg:w-64">
+                <div class="aspect-square w-full">
+                  <img src="https://images.pexels.com/photos/3825443/pexels-photo-3825443.jpeg" alt="news 3"
+                    class="w-full h-full object-cover block">
+                </div>
+              </div>
+              <div class="p-6">
                 <div class="text-xs text-gray-500">01 Sep 2025 • Ứng dụng lâm sàng</div>
-                <h3 class="mt-2 text-lg font-semibold text-gray-900">Hướng dẫn sử dụng mới cho các liệu
+                <h3 class="mt-2 text-lg md:text-xl font-semibold text-gray-900">Hướng dẫn sử dụng mới cho các liệu
                   pháp tại nhà</h3>
-                <p class="mt-2 text-sm text-gray-600">Các chuyên gia y tế công bố bộ khuyến cáo mới cho
+                <p class="mt-3 text-sm text-gray-600">Các chuyên gia y tế công bố bộ khuyến cáo mới cho
                   bệnh nhân sử dụng liệu pháp tại nhà, bao gồm giám sát và quản lý tác dụng phụ...</p>
               </div>
             </div>
